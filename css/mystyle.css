@@ -1,0 +1,189 @@
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+.select-box {
+  display: flex;
+  width: 230px;
+  flex-direction: column;
+  margin: 0 auto;
+}
+  
+.select-box .options-container {
+  background: #2f3640;
+  color: #f5f6fa;
+  max-height: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+  order: 1;
+}
+  
+.selected {
+  background: #2f3640;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #f5f6fa;
+  position: relative;
+  text-align: center;
+  order: 0;
+}
+  
+.selected::after {
+  /* content: ""; */
+  /* background: url("img/arrow-down.svg"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  position: absolute;
+  height: 100%;
+  width: 32px;
+  right: 10px;
+  top: 5px;
+  
+  transition: all 0.4s;
+}
+  
+.select-box .options-container.active {
+  margin-top: 55px;
+  max-height: 240px;
+  max-width: 230px;
+  opacity: 1;
+  overflow-y: scroll;
+  position: absolute;
+  z-index: 1;
+}
+  
+.select-box .options-container.active + .selected::after {
+  transform: rotateX(180deg);
+  top: -6px;
+  /* position: absolute; */
+}
+  
+.select-box .options-container::-webkit-scrollbar {
+  width: 8px;
+  background: #0d141f;
+  border-radius: 0 8px 8px 0;
+}
+  
+.select-box .options-container::-webkit-scrollbar-thumb {
+  background: #525861;
+  border-radius: 0 8px 8px 0;
+}
+  
+.select-box .option,.selected {
+  padding: 12px 24px;
+  cursor: pointer;
+}
+  
+.select-box .option:hover {
+  background: #414b57;
+}
+  
+.select-box label {
+  cursor: pointer;
+}
+  
+.select-box .option .radio {
+  display: none;
+}
+
+.loading{
+  position: fixed;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (max-width: 280px){
+  .table-content{
+    font-size: 11px;
+  }
+}
+
+.match-box{
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+.match-container{
+  /* height: 310px; */
+  border-style: groove;
+}
+
+.league-title,.date-title{
+  text-align: center;
+}
+
+.league-title{
+  margin-top: 10px;
+}
+
+.league-title{
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* .div-vs{
+  position: relative;
+}
+
+.div-vs span{
+  position: absolute;
+  display: flex;
+  margin: 0 auto;
+  bottom: 10%;
+  left: 40%;
+} */
+
+.club{
+  height: 255px;
+}
+
+.club img{
+  margin-top: 40px;
+  /* width: 100px;
+  height: 100px; */
+}
+
+.vs{
+  height: 255px;
+}
+
+.vs div{
+  margin-top: 200px;
+}
+
+.vs div span{
+  font-size: 18px;
+}
+
+.club .club-name{
+  margin-top: 50px;
+}
+
+.club .club-name span{
+  font-size: 20px;
+}
+
+.stats-container{
+  border-bottom: 2px solid grey;
+}
+
+.stats-container div{
+  margin-top: 10px;
+  margin-bottom: 1px;
+}
+
+.stats-container span{
+  font-size: 16px;
+}
+
+.stats-container .stats-title{
+  font-weight: bold;
+}
