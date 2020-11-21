@@ -56,6 +56,31 @@ new StaleWhileRevalidate({
 })
 )
 
+
+workbox.routing.registerRoute(
+  "https://fonts.googleapis.com/icon?family=Material+Icons",
+new StaleWhileRevalidate({
+    cacheName: 'google-web-fonts',
+  })
+);
+
+
+workbox.routing.registerRoute(
+  "https://fonts.gstatic.com/s/materialicons/v67/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2",
+new CacheFirst({
+  cacheName: 'materialize-icons', //cache name
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [0, 200],
+    }),
+    new ExpirationPlugin({
+      maxAgeSeconds: 365 * 24 * 60 * 60,
+      maxEntries: 60,
+    }),
+  ],
+})
+);
+
 self.addEventListener('push', function (event) {
   var body;
   if (event.data) {

@@ -734,6 +734,7 @@ function getSavedMatchById() {
     const idParam = parseInt(urlParams.get("id"));
 
     getById(idParam).then(function (data) {
+      console.log(`data adalah ${data}`);
 
 
       let matchdetailHTML = `
@@ -765,6 +766,17 @@ function getSavedMatchById() {
     `;
 
       document.getElementById("body-content").innerHTML = matchdetailHTML;
+      resolve(data);
+    });
+   });
+}
+
+function getCheckSavedMatchById() {
+  return new Promise((resolve) => {
+    var urlParams = new URLSearchParams(window.location.search);
+    const idParam = parseInt(urlParams.get("id"));
+
+    getById(idParam).then(function (data) {
       resolve(data);
     });
    });

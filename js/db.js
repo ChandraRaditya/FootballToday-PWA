@@ -11,7 +11,7 @@ function saveForLater(matchschedule) {
       const tx = db.transaction("matches", "readwrite");
       const store = tx.objectStore("matches");
       console.log(matchschedule);
-      store.add(matchschedule.match);
+      store.put(matchschedule.match);
       return tx.complete;
     }).then(() => {
       M.toast({html: 'Data Saved'})
