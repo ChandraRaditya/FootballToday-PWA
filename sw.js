@@ -58,7 +58,7 @@ new StaleWhileRevalidate({
 
 
 workbox.routing.registerRoute(
-  "https://fonts.googleapis.com/icon?family=Material+Icons",
+  /.*(?:googleapis|gstatic)\.com/,
 new StaleWhileRevalidate({
     cacheName: 'google-web-fonts',
   })
@@ -68,7 +68,7 @@ new StaleWhileRevalidate({
 workbox.routing.registerRoute(
   "https://fonts.gstatic.com/s/materialicons/v67/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2",
 new CacheFirst({
-  cacheName: 'materialize-icons', //cache name
+  cacheName: 'materialize-icons',
   plugins: [
     new CacheableResponsePlugin({
       statuses: [0, 200],
