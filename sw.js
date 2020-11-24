@@ -6,19 +6,19 @@ else
   console.log(`Workbox gagal dimuat`);
 
   workbox.precaching.precacheAndRoute([
-    { url: '/nav.html', revision: '1' },
-    { url: '/index.html', revision: '1' },
-    { url: '/detail_match.html', revision: '1' },
-    { url: '/manifest.json', revision: '1' },
-    { url: '/main.js', revision: '1' },
-    { url: '/detail.js', revision: '1' },
-    { url: '/css/materialize.min.css', revision: '1' },
-    { url: '/css/mystyle.css', revision: '1' },
-    { url: '/js/materialize.min.js', revision: '1' },
-    { url: '/js/nav.js', revision: '1' },
-    { url: '/js/api.js', revision: '1' },
-    { url: '/js/db.js', revision: '1' },
-    { url: '/js/idb.js', revision: '1' },
+    { url: '/FootballToday-PWA/nav.html', revision: '1' },
+    { url: '/FootballToday-PWA/index.html', revision: '1' },
+    { url: '/FootballToday-PWA/detail_match.html', revision: '1' },
+    { url: '/FootballToday-PWA/manifest.json', revision: '1' },
+    { url: '/FootballToday-PWA/main.js', revision: '1' },
+    { url: '/FootballToday-PWA/detail.js', revision: '1' },
+    { url: '/FootballToday-PWA/css/materialize.min.css', revision: '1' },
+    { url: '/FootballToday-PWA/css/mystyle.css', revision: '1' },
+    { url: '/FootballToday-PWA/js/materialize.min.js', revision: '1' },
+    { url: '/FootballToday-PWA/js/nav.js', revision: '1' },
+    { url: '/FootballToday-PWA/js/api.js', revision: '1' },
+    { url: '/FootballToday-PWA/js/db.js', revision: '1' },
+    { url: '/FootballToday-PWA/js/idb.js', revision: '1' },
 ],
 {
   // Ignore all URL parameters.
@@ -33,7 +33,7 @@ const {ExpirationPlugin} = workbox.expiration;
 
 //register all logo in logos folder with cachefirst strategies
 workbox.routing.registerRoute(
-  new RegExp('/img/'),
+  new RegExp('/FootballToday-PWA/img/'),
 new CacheFirst({
     cacheName: 'footballtoday-image',
   })
@@ -42,7 +42,7 @@ new CacheFirst({
 
 //register all file in pages folder using staleWhileRevalidate strategies
 workbox.routing.registerRoute(
-  new RegExp('/pages/'),
+  new RegExp('/FootballToday-PWA/pages/'),
 new StaleWhileRevalidate({
     cacheName: "pages"
   })
