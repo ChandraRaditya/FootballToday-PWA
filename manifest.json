@@ -2,7 +2,7 @@
     "name": "Football Today",
     "short_name": "Football",
     "description": "Football Today",
-    "start_url": "/index.html",
+    "start_url": "/FootballToday-PWA/index.html",
     "display": "standalone",
     "background_color": "#e8e8e8",
     "theme_color": "#e8e8e8",
